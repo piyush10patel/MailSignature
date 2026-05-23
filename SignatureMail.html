@@ -1,417 +1,370 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Signature Mail</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="StyleMail.css" />     
-    </head>
-    <body>
-        <h1 id="heading">MAIL SIGNATURE</h1>
+<html lang="en">
+<head>
+    <title>SignatureMail — Professional Email Signatures</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleMail.css" />
+</head>
+<body>
 
+<!-- NAV -->
+<nav id="topnav">
+    <div class="nav-inner">
+        <div class="nav-brand">
+            <span class="brand-icon">✦</span>
+            <span class="brand-name">SignatureMail</span>
+        </div>
+        <div class="nav-actions">
+            <span class="nav-badge">Free Builder</span>
+        </div>
+    </div>
+</nav>
 
-        <div id='preview' style='position:relative; height: 500px; width: 100%; background: beige; padding:0px' >
-            <a href="#home" ><img alt="" id='slide' width='600' height="400" /></a>
-            <div style="position: absolute; top: 0; right: 0; height: 500px; width: 50%; text-align: center; font-size: 48px;">
-                <div id="slidetext" style="display: table-cell; padding: 20px; vertical-align: middle; height: 500px;"></div>
+<!-- HERO -->
+<div id="hero">
+    <h1>Build Your Email Signature</h1>
+    <p>Choose a template, fill in your details, and download in seconds.</p>
+</div>
+
+<!-- TEMPLATE PICKER -->
+<div id="template-picker">
+    <div class="template-picker-inner">
+        <div class="template-card active" onclick="selectTemplate(1)">
+            <div class="tcard-preview t1-preview">
+                <div class="tp-logo"></div>
+                <div class="tp-lines">
+                    <div class="tp-line l-name"></div>
+                    <div class="tp-line l-sub"></div>
+                    <div class="tp-line l-short"></div>
+                </div>
+            </div>
+            <div class="tcard-label">Classic</div>
+        </div>
+        <div class="template-card" onclick="selectTemplate(2)">
+            <div class="tcard-preview t2-preview">
+                <div class="tp-logo"></div>
+                <div class="tp-lines">
+                    <div class="tp-line l-name"></div>
+                    <div class="tp-line l-sub"></div>
+                    <div class="tp-line l-short"></div>
+                </div>
+            </div>
+            <div class="tcard-label">Executive</div>
+        </div>
+        <div class="template-card" onclick="selectTemplate(3)">
+            <div class="tcard-preview t3-preview">
+                <div class="tp-top">
+                    <div class="tp-logo sm"></div>
+                    <div class="tp-line l-name"></div>
+                </div>
+                <div class="tp-line l-full"></div>
+                <div class="tp-line l-short"></div>
+            </div>
+            <div class="tcard-label">Minimal</div>
+        </div>
+        <div class="template-card" onclick="selectTemplate(4)">
+            <div class="tcard-preview t4-preview">
+                <div class="tp-sidebar">
+                    <div class="tp-logo sm"></div>
+                </div>
+                <div class="tp-lines">
+                    <div class="tp-line l-name"></div>
+                    <div class="tp-line l-sub"></div>
+                    <div class="tp-line l-short"></div>
+                </div>
+            </div>
+            <div class="tcard-label">Creative</div>
+        </div>
+        <div class="template-card" onclick="selectTemplate(5)">
+            <div class="tcard-preview t5-preview">
+                <div class="tp-banner">
+                    <div class="tp-logo sm"></div>
+                    <div class="tp-line l-name light"></div>
+                </div>
+                <div class="tp-lines below">
+                    <div class="tp-line l-full"></div>
+                    <div class="tp-line l-short"></div>
+                </div>
+            </div>
+            <div class="tcard-label">Vibrant</div>
+        </div>
+    </div>
+</div>
+
+<!-- BUILDER -->
+<div id="builder">
+
+    <!-- LEFT: FORM PANEL -->
+    <div id="form-panel">
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="showTab('tab-info', this)">Info</button>
+            <button class="tab-btn" onclick="showTab('tab-logo', this)">Logo</button>
+            <button class="tab-btn" onclick="showTab('tab-social', this)">Social</button>
+            <button class="tab-btn" onclick="showTab('tab-style', this)">Style</button>
+        </div>
+
+        <!-- INFO TAB -->
+        <div id="tab-info" class="tab-panel active">
+            <div class="field-group">
+                <div class="field-row">
+                    <label>Name</label>
+                    <input type="text" id="inputname" placeholder="e.g. Jane Smith" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#000000" oninput="ColorPicker('name', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Job Title</label>
+                    <input type="text" id="inputtitle" placeholder="e.g. Product Designer" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#555555" oninput="ColorPicker('title', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Email</label>
+                    <input type="email" id="inputemail" placeholder="jane@company.com" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#0055cc" oninput="ColorPicker('email', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Mobile</label>
+                    <input type="text" id="inputmobile" placeholder="+1 000 000 0000" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#333333" oninput="ColorPicker('mobile', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-divider"><span>Company</span></div>
+                <div class="field-row">
+                    <label>Company Name</label>
+                    <input type="text" id="inputcompanyname" placeholder="e.g. Acme Inc." oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#0055cc" oninput="ColorPicker('companyname', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Office Phone</label>
+                    <input type="text" id="inputofficephone" placeholder="+1 000 000 0000" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#333333" oninput="ColorPicker('officephone', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Fax</label>
+                    <input type="text" id="inputfax" placeholder="Fax number" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#333333" oninput="ColorPicker('fax', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Address</label>
+                    <input type="text" id="inputaddresslineone" placeholder="123 Main St" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#555555" oninput="ColorPicker('addresslineone', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>City / State</label>
+                    <input type="text" id="inputaddresslinetwo" placeholder="New York, NY 10001" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#555555" oninput="ColorPicker('addresslinetwo', this.value)" title="Text color">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label>Website</label>
+                    <input type="url" id="inputwebsite" placeholder="https://company.com" oninput="initialInput(this)">
+                    <div class="color-swatch-wrap">
+                        <input type="color" value="#0055cc" oninput="ColorPicker('website', this.value)" title="Text color">
+                    </div>
+                </div>
             </div>
         </div>
 
-
-        <section id="page">
-            <section id="left">
-                <ul class="nav">
-                    <li><a onclick="showTab('inputinfo', this)">HOME</a></li>
-                    <li><a onclick="showTab('inputlogo', this)">LOGO</a></li>
-                    <li><a onclick="showTab('inputsocial', this)">SOCIAL</a></li>
-                    <li><a onclick="showTab('inputstyle', this)">STYLE</a></li>
-                </ul>
-                <div class="tab-container">
-                    <div id="inputinfo" class="tab show">
-                        <table id='inputvalues' class="table-input">
-                            <tr style="text-align: center">
-                                <th></th>
-                                <th></th>
-                                <th style="width:50%">Information</th>  
-                                <th style="width:10%">Size</th>
-                                <th>Color</th>
-                            </tr>
-                            <tr>
-                                <td>Universal</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputuniversal" oninput='universallyUpdateSignatureText(this)'></td>  
-                                <td><input type="number" min="8" max="40" oninput='universallyUpdateSignatureTextSize(this.value)'/></td>
-                                <td><input class='jscolor' onchange='UniversalColorPicker(this.value)'/></td>
-                            </tr>
-                            <tr> 
-                                <td>Name</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputname" oninput='initialInput(this)'> </td>  
-                                <td><input type="number" id="inputnamesize" min="8" max="40" oninput='updateSignatureTextSize("name", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("name", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Title </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputtitle" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputtitlesize" min="8" max="40" oninput='updateSignatureTextSize("title", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("title", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Email </td>
-                                <td>:</td>
-                                <td><input type="email" id="inputemail" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputemailsize"  min="8" max="40" oninput='updateSignatureTextSize("email", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("email", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Mobile</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputmobile" oninput="initialInput(this)"></td>
-                                <td><input type="number" id="inputmobilesize" min="8" max="40" oninput='updateSignatureTextSize("mobile", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("mobile", this.value)'/></td>
-                            </tr> 
-                            <tr>
-                                <td>Company's Name </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputcompanyname" oninput="initialInput(this)"></td>
-                                <td><input type="number" id="inputcompanynamesize" min="8" max="40" oninput='updateSignatureTextSize("companyname", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("companyname", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Office Phone </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputofficephone" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputofficephonesize" min="8" max="40" oninput='updateSignatureTextSize("officephone", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("officephone", this.value)'/></td>   
-                            </tr>
-                            <tr>
-                                <td>Fax </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputfax" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputfaxsize" min="8" max="40" oninput='updateSignatureTextSize("fax", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("fax", this.value)'/></td>                         
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputaddresslineone" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputaddresslineonesize" min="8" max="40" oninput='updateSignatureTextSize("addresslineone", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("addresslineone", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Address Line 1 </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputaddresslinetwo" oninput="initialInput(this)"></td>
-                                <td><input type="number" id="inputaddresslinetwosize"  min="8" max="40" oninput='updateSignatureTextSize("addresslinetwo", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("addresslinetwo", this.value)'/></td>
-                            </tr>
-                            <tr>
-                                <td>Website</td>
-                                <td>:</td>
-                                <td><input type="url" id="inputwebsite" oninput="initialInput(this)"></td> 
-                                <td><input type="number" id="inputwebsitesize"  min="8" max="40" oninput='updateSignatureTextSize("website", this.value)'/></td>
-                                <td><input class='jscolor' onchange='ColorPicker("website", this.value)'/></td>
-                            </tr>
-                        </table>
-                    </div> 
-                    <div id="inputlogo" class="tab hide">
-                        <table>
-                            <th>Logo And Banner</th>
-                            <tr>
-                                <td>Select Logo</td>
-                                <td>:</td>
-                                <td><input type="file" onchange="PreviewImageFile('inputlogoimage', 'logoimage')" id="inputlogoimage"><br></td>
-                            </tr>
-                            <tr>
-                                <td>Upload Banner</td>
-                                <td>:</td>
-                                <td><input type="file" id="inputbanner" onchange="PreviewImageFile('inputbanner', 'banner')"></td>
-                            </tr>
-                        </table>
-                    </div> 
-                    <div id="inputsocial" class="tab hide">
-                        <table class="table-input">
-                            <tr style="text-align: center">
-                                <th colspan="2"><b></b></th><th>Company</th><th>User</th>
-                            </tr>
-                            <tr>
-                                <td>Facebook </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputfacebook" name="Facebook" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputfacebookuser" name="Facebook" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Twitter </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputtwitter" name="Twitter" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputtwitteruser" name="Twitter" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Linkedin </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputlinkedin" name="LinkedIn" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputlinkedinuser" name="LinkedIn" oninput="updateSignatureLogo(this, 'logouser')"></td>
-
-                            </tr>
-                            <tr>
-                                <td>Google </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputgoogle" name="Google" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputgoogleuser" name="Google" oninput="updateSignatureLogo(this, 'logouser')"></td>
-
-                            </tr>
-                            <tr>
-                                <td>Flicker </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputflicker" name="Flicker" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputflickeruser" name="Flicker" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Github </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputgithub" name="GitHub" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputgithubuser" name="GitHub" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>imdb </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputimdb" name="imdb" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputimdbuser" name="imdb" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Instagram </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputinstagram" name="Instagram" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputinstagramuser" name="Instagram" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Maps </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputmaps" name="Maps" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputmapsuser" name="Maps" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Pintrest </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputpintrest" name="Pintrest" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputpintrestuser" name="Pintrest" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Quora </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputquora" name="Quora" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputquorauser" name="Quora" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Skype </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputskype" name="Skype" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputskypeuser" name="Skype" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Soundcloud </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputsoundcloud" name="SoundCloud" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputsoundclouduser" name="SoundCloud" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Tumblr </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputtumblr" name="Tumblr" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputtumblruser" name="Tumblr" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Vine </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputvine" name="Vine" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputvineuser" name="Vine" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Wordpress </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputwordpress" name="Wordpress" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputwordpressuser" name="Wordpress" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>
-                            <tr>
-                                <td>Youtube </td>
-                                <td>:</td>
-                                <td><input type="text" id="inputyoutube" name="Youtube" oninput="updateSignatureLogo(this, 'logocompany')"></td>
-                                <td><input type="text" id="inputyoutubeuser" name="Youtube" oninput="updateSignatureLogo(this, 'logouser')"></td>
-                            </tr>                         
-                        </table>
-                    </div> 
-                    <div id="inputstyle" class="tab hide">
-
-                        <table class="table-input">  
-                            <tr><td>Select Theme</td>
-                                <td>:</td>
-                                <td>
-                                    <div>
-                                        <select onchange="ChangeTheme(this.value)" >
-                                            <option value='0'>Select Theme </option>
-                                            <option value="1">Logo Aligned Left</option>
-                                            <option value="2">Logo Aligned Right</option>
-                                            <option value="4">Logo Aligned Left (Vertical) </option>
-                                            <option value="5">Logo Aligned Right (Vertical) </option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr><td>Select Icon Style Company</td>
-                                <td>:</td>
-                                <td>
-                                    <div>
-                                        <select onchange="ChangeStyle(this.value, 'logocompany')" >
-
-                                            <option value="0px">Square</option>
-                                            <option value="20%"> Rounded</option>
-                                            <option value="2% 35% 35% 2%">Right Rounded</option>
-                                            <option value="50%">Circle</option>
-                                            <option value="5% 30%">Two Side Rounded</option>
-
-                                        </select>
-                                    </div>
-                                </td><td><input type="checkbox" onchange="setGrayscale(this,'logocompany')" />Grayscale</td>
-                            </tr>
-                            <tr><td>Select Icon Style User</td>
-                                <td>:</td>
-                                <td>
-                                    <div>
-                                        <select onchange="ChangeStyle(this.value, 'logouser')" >
-
-                                            <option value="0px">Square</option>
-                                            <option value="20%"> Rounded</option>
-                                            <option value="2% 35% 35% 2%">Right Rounded</option>
-                                            <option value="50%">Circle</option>
-                                            <option value="5% 30%">Two Side Rounded</option>
-
-                                        </select>
-                                    </div>
-                                </td><td><input type="checkbox" onchange="setGrayscale(this,'logouser')" />Grayscale</td>
-                            </tr>
-                            <tr><td>Select Main Logo Style</td>
-                                <td>:</td>
-                                <td>
-                                    <div>
-                                        <select onchange="ChangeStyle(this.value,'logoimage')" >
-                                            
-                                            <option value="0px">Square</option>
-                                            <option value="20%"> Rounded</option>
-                                            <option value="2% 35% 35% 2%">Right Rounded</option>
-                                            <option value="50%">Circle</option>
-                                            <option value="5% 30%">Two Side Rounded</option>
-                                            
-                                        </select>
-                                    </div>
-                                </td><td><input type="checkbox" onchange="setGrayscale(this,'logoimage')" />Grayscale</td>
-                            </tr>
-                            
-                            <tr><td>Select Font<span style="font-size: 12px; color: red">(Some fonts may not be supported by your browser)</span></td>
-                                <td>:</td>
-                                <td>
-                                    <div>
-                                        <select onchange="ChangeFont(this.value)" >
-                                            <option value="0">Select</option>
-                                            <option value="timesnewroman">Times New Roman </option>
-                                            <option value="impact"> Impact </option>
-                                            <option value="arial">Arial</option>
-                                            <option value="verdana">Verdana</option>
-                                            <option value="cursive">Cursive </option>
-                                            <option value="tahoma">Tahoma</option>
-                                            <option value="marlett">Marlett</option>
-                                            <option value="georgia">Georgia</option>
-                                            <option value="webdings">webdings</option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td> Social Logo Size(User)</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputuserlogosize" oninput="SizeChange('Logouser',this.value)"></td>
-                            </tr>
-                            <tr>
-                                <td> Social Logo Size(Company)</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputcompanylogosize" oninput="SizeChange('Logoss',this.value)"></td>
-                            </tr>
-                            <tr>
-                                <td>Background Color</td>
-                                <td>:</td>
-                                <td><input class='jscolor' onchange='BackgroundColor(this.value)'/></td> 
-                            </tr> 
-                            <tr>
-                                <td>Main Logo Size</td>
-                                <td>:</td>
-                                <td><input type="text" id="inputmainlogosize" oninput="SizeChange('Main Logo',this.value)" /></td> 
-                            </tr> 
-                        </table>
-                    </div> 
+        <!-- LOGO TAB -->
+        <div id="tab-logo" class="tab-panel">
+            <div class="field-group">
+                <p class="tab-hint">Upload your company logo. PNG with transparent background works best.</p>
+                <div class="logo-upload-area" id="logo-upload-area" onclick="document.getElementById('inputlogoimage').click()">
+                    <img src="" id="logo-placeholder-img" alt="" style="display:none; max-width:120px; max-height:80px; border-radius:4px;">
+                    <div id="logo-placeholder-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                        </svg>
+                        <span>Click to upload logo</span>
+                        <span class="upload-sub">PNG, JPG up to 2MB</span>
+                    </div>
+                    <input type="file" accept="image/*" id="inputlogoimage" style="display:none" onchange="handleLogoUpload(this)">
                 </div>
-            </section>
-            <section id="right">
-                <div id="signature-preview" style="
-                     position:relative;
-                     min-height: 400px;
-                     width: 500px;
-                     display: block;
-                     background: white;
-                     margin: 20px auto;
-                     box-shadow: 0 0 20px 0px #666;" >
-                    <div id="layoutbasicinformation" style="margin-left: 90px; padding-top: 15px;">
-                        <div>
-                            <span style="font-weight: bold;  font-size: 18px" id='name' class='output'>John</span>
-                            <span style=" font-size: 15px" id="title" class='output'>| Developer</span>
-                        </div>
-                        <div style="padding: 4px 0;">
-                            <span>   
-                                <a href="" id="emaillink" style="text-decoration:none; font-size: 15px">  
-                                    <span id="email" class='output' style=" font-size: 15px" >john@jonastech.co.in</span>
-                                </a>
-                                <span style="" id="mobile" class='output'><b>M:</b>8546325468</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div id="layoutcompanyinformation" style="margin-top: 10px; margin-left: 90px;">
-                        <a href='' id='companylink' style="text-decoration: none; font-size:56px;"> 
-                            <span  style="display: block; font-weight:bold;" id="companyname" class='output'>JonasTech</span>
-                        </a>
-                    </div>
-                    <div id="layoutcontactinformation" style="margin-top: 20px; margin-left: 90px;">  
-                        <div>
-                            <span style="display: inline-block; font-size: 16px" id="officephone" class='output'><b>O:</b>54632564</span>
-                            <span style="display: inline-block; font-size: 16px" id="fax" class='output'><b>F:</b>45686584</span>
-                        </div>
-                        <span id="addresslineone" style="display:block; font-size: 15px" class='output'>221 Lake Street </span>
-                        <span id="addresslinetwo" style="display:block; font-size: 15px" class='output'>London UK</span>
-                        <div>
-                            <a href="" style="text-decoration:none;  font-size: 15px" id="websitelink">
-                                <span id="website" class="output">http://www.jonastech.com</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="layoutlogo" style="position: absolute; top: 0; left: 0;">
-                        <a href="" id="logolink">
-                            <img src="" id='logoimage' height="75" width="75" class="output logoimage" alt="">
-                        </a>
-                    </div>
-                    <div style="position: absolute; top: 10px; right: 20px;" id='logouser'></div>
-                    <div style="position: absolute; bottom: 46px; left: 0; width: 100%; text-align: center;" id='logocompany'></div>
-                    <div id="layoutbanner" style="position: absolute; bottom: -4px; padding: 0;">
-                        <img src="" id="banner" width="500" height="50"  alt=""/>
-                    </div>
-                </div>
-            </section>    
-        </section>
-
-        <div id="code-container">
-            <div class="close" onclick="this.parentNode.setAttribute('class', 'hide')">X</div>
-            <div id="code"></div>
+            </div>
         </div>
-        <div><button onclick="showCode()">Show Code</button></div>
 
-        <script src="ScriptMail.js"></script>
-    </body>
+        <!-- SOCIAL TAB -->
+        <div id="tab-social" class="tab-panel">
+            <div class="field-group">
+                <p class="tab-hint">Enter profile URLs or usernames. Icons will appear in your signature.</p>
+                <div class="social-grid">
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#0077b5">in</span>
+                        <input type="text" id="inputlinkedin" name="LinkedIn" placeholder="linkedin.com/in/yourname" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#000">𝕏</span>
+                        <input type="text" id="inputtwitter" name="Twitter" placeholder="twitter.com/yourhandle" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#1877f2">f</span>
+                        <input type="text" id="inputfacebook" name="Facebook" placeholder="facebook.com/yourpage" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">✦</span>
+                        <input type="text" id="inputinstagram" name="Instagram" placeholder="instagram.com/yourhandle" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#ff0000">▶</span>
+                        <input type="text" id="inputyoutube" name="Youtube" placeholder="youtube.com/yourchannel" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#24292e">⌥</span>
+                        <input type="text" id="inputgithub" name="GitHub" placeholder="github.com/yourprofile" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#ff4500">●</span>
+                        <input type="text" id="inputquora" name="Quora" placeholder="quora.com/profile" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                    <div class="social-row">
+                        <span class="social-icon-label" style="background:#00b2ff">☁</span>
+                        <input type="text" id="inputskype" name="Skype" placeholder="Skype username" oninput="updateSignatureLogo(this, 'logocompany')">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STYLE TAB -->
+        <div id="tab-style" class="tab-panel">
+            <div class="field-group">
+                <div class="style-row">
+                    <label>Logo Shape</label>
+                    <select onchange="ChangeStyle(this.value, 'logoimage')">
+                        <option value="0px">Square</option>
+                        <option value="8px">Slightly Rounded</option>
+                        <option value="20%">Rounded</option>
+                        <option value="50%">Circle</option>
+                    </select>
+                </div>
+                <div class="style-row">
+                    <label>Social Icon Shape</label>
+                    <select onchange="ChangeStyle(this.value, 'logocompany')">
+                        <option value="0px">Square</option>
+                        <option value="20%">Rounded</option>
+                        <option value="50%">Circle</option>
+                    </select>
+                </div>
+                <div class="style-row">
+                    <label>Background Color</label>
+                    <input type="color" value="#ffffff" oninput="BackgroundColor(this.value)">
+                </div>
+                <div class="style-row">
+                    <label>Grayscale Icons</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" onchange="setGrayscale(this,'logocompany')">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: PREVIEW PANEL -->
+    <div id="preview-panel">
+        <div id="preview-header">
+            <span class="preview-label">Live Preview</span>
+            <div class="preview-actions">
+                <button class="btn-secondary" onclick="copySignatureHTML()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    Copy HTML
+                </button>
+                <button class="btn-primary" onclick="downloadSignature()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        <div id="preview-canvas">
+            <div id="signature-preview" class="template-1">
+
+                <div id="layoutlogo">
+                    <a href="" id="logolink">
+                        <img src="" id="logoimage" height="75" width="75" class="logoimage" alt="">
+                    </a>
+                </div>
+
+                <div id="layoutbasicinformation">
+                    <span id="name" class="output">Jane Smith</span>
+                    <span id="title" class="output"> | Product Designer</span>
+                </div>
+
+                <div id="layoutcompanyinformation">
+                    <a href="" id="companylink" style="text-decoration:none">
+                        <span id="companyname" class="output">Acme Inc.</span>
+                    </a>
+                </div>
+
+                <div id="layoutcontactinformation">
+                    <div class="sig-contact-row">
+                        <a href="" id="emaillink" style="text-decoration:none"><span id="email" class="output">jane@acme.com</span></a>
+                        <span class="sig-dot">·</span>
+                        <span id="mobile" class="output">+1 555 000 0000</span>
+                    </div>
+                    <div class="sig-contact-row">
+                        <span id="officephone" class="output"></span>
+                        <span id="fax" class="output"></span>
+                    </div>
+                    <span id="addresslineone" class="output" style="display:block"></span>
+                    <span id="addresslinetwo" class="output" style="display:block"></span>
+                    <a href="" id="websitelink" style="text-decoration:none">
+                        <span id="website" class="output"></span>
+                    </a>
+                </div>
+
+                <div id="logouser"></div>
+                <div id="logocompany"></div>
+                <div id="layoutbanner"></div>
+
+            </div>
+        </div>
+
+        <div id="preview-footer">
+            <p>💡 Copy the HTML and paste it into your email client's signature settings.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast">Copied to clipboard!</div>
+
+<!-- CODE MODAL (kept for fallback) -->
+<div id="code-container">
+    <div class="modal-overlay" onclick="closeCodeModal()"></div>
+    <div class="modal-box">
+        <div class="modal-header">
+            <span>HTML Code</span>
+            <button class="modal-close" onclick="closeCodeModal()">✕</button>
+        </div>
+        <div id="code"></div>
+        <div class="modal-footer">
+            <button class="btn-secondary" onclick="copyFromModal()">Copy All</button>
+            <button class="btn-primary" onclick="closeCodeModal()">Done</button>
+        </div>
+    </div>
+</div>
+
+<script src="ScriptMail.js"></script>
+</body>
 </html>
